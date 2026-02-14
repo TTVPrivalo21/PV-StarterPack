@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+        <div class="container">
+            <header>
+                <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+                <h1 id="title">BIENVENIDO</h1>
+                <p id="desc">Kit de inicio</p>
+            </header>
+
+            <div class="content-grid">
+                <div class="card money-card">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <div class="info">
+                        <span>Dinero Efectivo</span>
+                        <h3 id="cash-amount">$0</h3>
+                    </div>
+                </div>
+                <div class="card bank-card">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <div class="info">
+                        <span>Cuenta Bancaria</span>
+                        <h3 id="bank-amount">$0</h3>
+                    </div>
+                </div>
+                <div class="card vehicle-card" id="veh-container">
+                    <i class="fa-solid fa-car"></i>
+                    <div class="info">
+                        <span>Vehículo Personal</span>
+                        <h3 id="veh-name">Modelo</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items-list">
+                <h4><i class="fa-solid fa-box-open"></i> Inventario Incluido</h4>
+                <ul id="items-ul">
+                    </ul>
+            </div>
+
+            <button id="claim-btn">RECLAMAR CIUDADANÍA</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
