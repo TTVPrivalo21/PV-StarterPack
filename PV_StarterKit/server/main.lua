@@ -103,7 +103,7 @@ RegisterNetEvent('pv_starterkit:server:claimKit', function()
     })
 end)
 
--- 3. Comandos Admin y Exports
+-- Comandos Admin y Exports
 QBCore.Commands.Add('resetstarter', 'Resetear kit de inicio (Admin)', {{name='id', help='ID del jugador'}}, true, function(source, args)
     local targetId = tonumber(args[1])
     local Target = QBCore.Functions.GetPlayer(targetId)
@@ -123,3 +123,4 @@ exports('HasClaimedKit', function(source)
     return Player and Player.PlayerData.metadata['starterkit_claimed'] or false
 
 end)
+
