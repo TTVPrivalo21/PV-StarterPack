@@ -37,3 +37,6 @@ exports['pv_starterkit']:HasClaimedKit(source)
 # 📝 NOTAS ADICIONALES:
 • El vehículo se guarda por defecto en: pillboxgarage.
 • La interfaz se cierra automáticamente con la tecla ESC.
+
+# 📄 Licencia
+Este proyecto está bajo la Licencia MIT. Eres libre de usarlo, modificarlo y compartirlo, pero no está permitida su venta directa.
