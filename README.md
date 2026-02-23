@@ -13,9 +13,9 @@ Permite a los nuevos jugadores reclamar un paquete inicial con dinero, ítems y 
 
 # 📋 REQUISITOS:
 * QBCore Framework
-* [[Ox Lib](https://github.com/overextended/ox_lib)]
-* [[Ox Inventory](https://github.com/TheOrderFivem/ox_inventory)] (Recomiendo este Inventario ya que esta actualizado a la ultima version y adaptado para QBcore)
-* [[Ox Target](https://github.com/TheOrderFivem/ox_target)] (Recomiendo este Target ya que esta actualizado a la ultima version y adaptado para QBcore)
+* [Ox Lib](https://github.com/overextended/ox_lib)
+* [Ox Inventory](https://github.com/TheOrderFivem/ox_inventory) (Recomiendo este Inventario ya que esta actualizado a la ultima version y adaptado para QBcore)
+* [Ox Target](https://github.com/TheOrderFivem/ox_target) (Recomiendo este Target ya que esta actualizado a la ultima version y adaptado para QBcore)
 
 # 🚀 INSTALACIÓN RÁPIDA:
 1. Renombra la carpeta a: pv_starterkit.
