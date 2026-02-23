@@ -14,31 +14,25 @@ function setupUI(data) {
     const cfg = data.config;
     const rw = data.rewards;
 
-    // Configurar Textos y Colores
     document.getElementById('title').innerText = cfg.Title;
     document.getElementById('desc').innerText = cfg.Description;
     document.getElementById('claim-btn').innerText = cfg.ButtonText;
     root.style.setProperty('--primary', cfg.PrimaryColor);
 
-    // Configurar Dinero
     document.getElementById('cash-amount').innerText = '$' + rw.Money.Cash.toLocaleString();
     document.getElementById('bank-amount').innerText = '$' + rw.Money.Bank.toLocaleString();
 
-    // Configurar Vehículo
     if (data.vehicle) {
         document.getElementById('veh-name').innerText = data.vehicle.toUpperCase();
     } else {
         document.getElementById('veh-container').style.display = 'none';
     }
 
-    // Listar Items
     const list = document.getElementById('items-ul');
     list.innerHTML = '';
     
-    // Convertimos el objeto de items en array para iterar
     Object.entries(rw.Items).forEach(([name, count]) => {
         const li = document.createElement('li');
-        // Formatear nombre del item (quitar guiones bajos y capitalizar)
         const friendlyName = name.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         li.innerHTML = `${friendlyName} <b>x${count}</b>`;
         list.appendChild(li);
@@ -65,4 +59,5 @@ document.onkeyup = function(data) {
         });
         app.classList.add('hidden');
     }
+
 };
