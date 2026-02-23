@@ -131,7 +131,7 @@ end)
 local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
 local resourceName = GetCurrentResourceName()
 
-local versionUrl = "https://raw.githubusercontent.com/TTVPrivalo21/PV-MultiJob/main/PV_StarterKit/fxmanifest.lua?v=" .. os.time()
+local versionUrl = "https://raw.githubusercontent.com/TTVPrivalo21/PV-StarterPack/main/PV_StarterKit/fxmanifest.lua?v=" .. os.time()
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == resourceName then
@@ -166,4 +166,5 @@ AddEventHandler('onResourceStart', function(resource)
         end, 'GET')
     end
 end)
+
 
