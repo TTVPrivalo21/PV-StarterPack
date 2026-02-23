@@ -29,13 +29,12 @@ local function SpawnNPC()
                 TriggerServerEvent('pv_starterkit:server:checkStatus')
             end,
             canInteract = function(entity, distance, coords, name)
-                return not LocalPlayer.state.hasStarterKit -- Optimización: chequeo en state bag
+                return not LocalPlayer.state.hasStarterKit 
             end
         }
     })
 end
 
--- Thread para manejar el spawn del NPC por distancia (Optimización)
 CreateThread(function()
     while true do
         local sleep = 1000
@@ -55,7 +54,6 @@ CreateThread(function()
     end
 end)
 
--- Evento para abrir el NUI (solo si el server confirma que no lo ha reclamado)
 RegisterNetEvent('pv_starterkit:client:openMenu', function()
     SetNuiFocus(true, true)
     SendNUIMessage({
@@ -66,7 +64,6 @@ RegisterNetEvent('pv_starterkit:client:openMenu', function()
     })
 end)
 
--- Callbacks del NUI
 RegisterNUICallback('close', function(_, cb)
     SetNuiFocus(false, false)
     cb('ok')
@@ -78,9 +75,9 @@ RegisterNUICallback('claim', function(_, cb)
     cb('ok')
 end)
 
--- Limpieza al detener el recurso
 AddEventHandler('onResourceStop', function(resource)
     if resource == GetCurrentResourceName() and pedSpawned then
         DeleteEntity(pedSpawned)
     end
+
 end)
