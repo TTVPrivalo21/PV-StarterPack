@@ -124,3 +124,46 @@ exports('HasClaimedKit', function(source)
 
 end)
 
+
+
+
+
+local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
+local resourceName = GetCurrentResourceName()
+
+local versionUrl = "https://raw.githubusercontent.com/TTVPrivalo21/PV-MultiJob/main/PV_StarterKit/fxmanifest.lua?v=" .. os.time()
+
+AddEventHandler('onResourceStart', function(resource)
+    if resource == resourceName then
+        PerformHttpRequest(versionUrl, function(errorCode, resultData, resultHeaders)
+            if errorCode == 200 then
+                local remoteVersion = resultData:match("[\n\r]%s*version%s*['\"]([^'\"]+)['\"]")
+                
+                if not remoteVersion then
+                    remoteVersion = resultData:match("version%s*['\"]([^'\"]+)['\"]")
+                end
+
+                if remoteVersion then
+                    remoteVersion = remoteVersion:gsub("%s+", "")
+                    local localV = currentVersion:gsub("%s+", "")
+
+                    if remoteVersion ~= localV then
+                        print("^1---------------------------------------------------------------^7")
+                        print("^3["..resourceName.."] Estatus: ^1ACTUALIZACIÓN DISPONIBLE^7")
+                        print("^3Versión Local: ^7" .. localV)
+                        print("^3Versión GitHub: ^2" .. remoteVersion)
+                        print("^3Link: ^5https://github.com/TTVPrivalo21/PV-StarterPack^7")
+                        print("^1---------------------------------------------------------------^7")
+                    else
+                        print("^2["..resourceName.."] El script está en la última versión (v"..localV..").^7")
+                    end
+                else
+                    print("^3["..resourceName.."] Error: No se pudo encontrar el formato de versión en GitHub.^7")
+                end
+            else
+                print("^3["..resourceName.."] Error de conexión: "..errorCode.."^7")
+            end
+        end, 'GET')
+    end
+end)
+
